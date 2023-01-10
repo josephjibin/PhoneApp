@@ -1,0 +1,16 @@
+<div class="container">
+<ul>
+    <li *ngFor="let phone of phones">
+        <a>
+        <img src="{{phone.imageUrl}}" alt="iphone images"> 
+        </a>
+    <div class="content">
+        <div class="name">
+            {{phone.name}} 
+        </div>
+        <span class="rating {{phone.rating?'':'not'}}" >♥</span>
+    </div>    
+
+    </li>
+</ul>
+</div>
