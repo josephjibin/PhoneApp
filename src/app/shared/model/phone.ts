@@ -6,5 +6,6 @@ export class phone{
     star:number = 0;
     tags?:string[];
     imageUrl!:string;
-
+    cameras!:string[];
+    batteries!:string;
 }

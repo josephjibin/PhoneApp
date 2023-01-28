@@ -1,5 +1,6 @@
 <div class="container">
-<ul>
+    <app-search></app-search>
+    <ul>
     <li *ngFor="let phone of phones">
         <a>
         <img src="{{phone.imageUrl}}" alt="iphone images"> 
@@ -8,9 +9,42 @@
         <div class="name">
             {{phone.name}} 
         </div>
-        <span class="rating {{phone.rating?'':'not'}}" >♥</span>
+    <span class="rating {{phone.rating?'':'not'}}" >♥</span> 
+    <star-rating [value]="phone.star" 
+        [totalstars]="5" checkedcolor="red" 
+        uncheckedcolor="black" size="24px" 
+        [readonly]="true" >
+    </star-rating>
+    <div class="product-item-footer">
+        <div class="camera">
+            <span *ngFor="let camera of phone.cameras">
+                {{camera }}
+            </span>
+            
+        </div>
+        <div class="battery">
+        <span >
+            🔋 
+        </span>
+        {{phone.batteries}}  
+        </div>
+    </div>
+    <div class="price">
+        {{phone.price|currency}}
+    </div>
     </div>    
+   
 
     </li>
 </ul>
 </div>
+
+<!-- <div class="card-group">
+    <div class="card"  *ngFor="let phone of phones">
+      <img src="{{phone.imageUrl}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{phone.name}} </h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div> -->
